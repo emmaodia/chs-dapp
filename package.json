@@ -2,7 +2,7 @@
   "name": "communityhealthsupport",
   "version": "0.1.0",
   "engines": {
-    "node": "12.16.x"
+    "node": "10.16.3"
   },
   "private": true,
   "scripts": {
