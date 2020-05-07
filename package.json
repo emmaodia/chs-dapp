@@ -1,6 +1,9 @@
 {
   "name": "communityhealthsupport",
   "version": "0.1.0",
+  "engines": {
+    "node": "12.16.x"
+  },
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -24,7 +27,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emmaodia/premier-league-api.git"
+    "url": "git+https://github.com/emmaodia/chs-dapp.git"
   },
   "browserslist": [
     "> 1%",
