@@ -1,5 +1,5 @@
 {
-  "name": "crowdfunding",
+  "name": "communityhealthsupport",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -21,6 +21,10 @@
     "vue-cli-plugin-vuetify": "^0.4.6",
     "vue-template-compiler": "^2.6.6",
     "vuetify-loader": "^1.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emmaodia/premier-league-api.git"
   },
   "browserslist": [
     "> 1%",
