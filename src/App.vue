@@ -8,81 +8,171 @@
         >
           <v-flex mb-4>
             <h1 class="display-2 font-weight-bold mb-3">
-              Crowdfunding
+              Community Health Support DApp
             </h1>
             <p class="subheading font-weight-regular">
-              Utilizing Ethereum for Decentralized Crowdfunding
+              A simple Ethereum-based decentralized application (dapp) where communities can put in request for needs for medical relief materials such as Personal Protective Equipments for Medical Teams.
             </p>
           </v-flex>
         </v-layout>
-
         <v-layout row justify-center>
-          <v-dialog v-model="startProjectDialog" max-width="600px" persistent>
-            <v-btn slot="activator" color="primary" dark>Start a Project</v-btn>
-            <v-card>
-              <v-card-title>
-                <span class="headline font-weight-bold mt-2 ml-4">Bring your project to life</span>
-              </v-card-title>
-              <v-card-text class="pt-0">
-                <v-container class="pt-0" grid-list-md>
-                  <v-layout wrap>
-                    <v-flex xs12>
-                      <v-text-field
-                        label="Title"
-                        persistent-hint
-                        v-model="newProject.title">
-                      </v-text-field>
-                    </v-flex>
-                    <v-flex xs12>
-                      <v-textarea
-                        label="Description"
-                        persistent-hint
-                        v-model="newProject.description">
-                      </v-textarea>
-                    </v-flex>
-                    <v-flex xs12 sm6>
-                      <v-text-field
-                        label="Amount Needed (ETH)"
-                        type="number"
-                        step="0.0001"
-                        min="0"
-                        v-model="newProject.amountGoal">
-                      </v-text-field>
-                    </v-flex>
-                    <v-flex xs12 sm6>
-                      <v-text-field
-                        label="Duration (in days)"
-                        type="number"
-                        v-model="newProject.duration">
-                      </v-text-field>
-                    </v-flex>
-                  </v-layout>
-                </v-container>
-              </v-card-text>
-              <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn
-                  color="blue darken-1"
-                  flat
-                  @click="startProjectDialog = false;
-                  newProject.isLoading = false;">
-                  Close
-                </v-btn>
-                <v-btn color="blue darken-1"
-                  flat
-                  @click="startProject"
-                  :loading="newProject.isLoading">
-                  Save
-                </v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-dialog>
+            <v-dialog v-model="dialog" width="500">
+                <template v-slot:activator="{ on }">
+                  <v-btn color="primary" dark v-on="on">About CHS DApp</v-btn>
+                </template>
+                <v-card>
+                  <v-card-title
+                    class="headline grey lighten-2 font-weight-bold"
+                    primary-title
+                  >
+                    Why I built CHS DApp
+                  </v-card-title>
+
+                  <v-card-text>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </v-card-text>
+
+                  <v-divider></v-divider>
+
+                  <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn
+                      color="primary"
+                      text
+                      @click="dialog = false"
+                    >
+                      Close
+                    </v-btn>
+                  </v-card-actions>
+                </v-card>
+            </v-dialog>
+            <v-dialog v-model="startProjectEquipmentDialog" max-width="600px" persistent>
+              <v-btn slot="activator" color="primary" dark>Request Equipment Support</v-btn>
+              <v-card>
+                  <v-card-title>
+                    <span class="headline font-weight-bold mt-2 ml-4">Request Medical Equipment Support for your Community Health Needs</span>
+                  </v-card-title>
+                  <v-card-text class="pt-0">
+                    <v-container class="pt-0" grid-list-md>
+                      <v-layout wrap>
+                        <v-flex xs12>
+                          <v-text-field
+                            label="Complete Address"
+                            persistent-hint
+                            v-model="newProject.title"
+                            >
+                          </v-text-field>
+                        </v-flex>
+                        <v-flex xs12>
+                          <v-textarea
+                            label="List Items Needed"
+                            persistent-hint
+                            v-model="newProject.description">
+                          </v-textarea>
+                        </v-flex>
+                        <v-flex xs12 sm6>
+                          <v-text-field
+                            label="Contact Phone Number"
+                            v-model="newProject.phone">
+                          </v-text-field>
+                        </v-flex>
+                        <v-flex xs12 sm6>
+                          <v-text-field
+                            label="Email"
+                            v-model="newProject.email">
+                          </v-text-field>
+                        </v-flex>
+                      </v-layout>
+                    </v-container>
+                  </v-card-text>
+                  <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn
+                      color="blue darken-1"
+                      flat
+                      @click="startProjectEquipmentDialog = false;
+                      newProject.isLoading = false;">
+                      Close
+                    </v-btn>
+                    <v-btn color="blue darken-1"
+                      flat
+                      @click="startProject"
+                      :loading="newProject.isLoading">
+                      Save
+                    </v-btn>
+                  </v-card-actions>
+                </v-card>
+            </v-dialog>  
+            <v-dialog v-model="startProjectDialog" max-width="600px" persistent>
+                <v-btn slot="activator" color="primary" dark>Request Funding Support</v-btn>
+                <v-card>
+                  <v-card-title>
+                    <span class="headline font-weight-bold mt-2 ml-4">Request Funding for your Community Health Needs</span>
+                  </v-card-title>
+                  <v-card-text class="pt-0">
+                    <v-container class="pt-0" grid-list-md>
+                      <v-layout wrap>
+                        <v-flex xs12>
+                          <v-text-field
+                            label="Complete Address"
+                            persistent-hint
+                            v-model="newProject.title">
+                          </v-text-field>
+                        </v-flex>
+                        <v-flex xs12>
+                          <v-textarea
+                            label="Needs Description"
+                            persistent-hint
+                            v-model="newProject.description">
+                          </v-textarea>
+                        </v-flex>
+                        <v-flex xs12>
+                          <v-text-field
+                            label="Email"                            
+                            persistent-hint
+                            v-model="newProject.email">
+                          </v-text-field>
+                        </v-flex>
+                        <v-flex xs12 sm6>
+                          <v-text-field
+                            label="Contact Phone Number"
+                            v-model="newProject.phone">
+                          </v-text-field>
+                        </v-flex>
+                        <v-flex xs12 sm6>
+                          <v-text-field
+                            label="Amount Needed (ETH)"
+                            type="number"
+                            step="0.0001"
+                            min="0"
+                            v-model="newProject.amountGoal">
+                          </v-text-field>
+                        </v-flex>
+                      </v-layout>
+                    </v-container>
+                  </v-card-text>
+                  <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn
+                      color="blue darken-1"
+                      flat
+                      @click="startProjectDialog = false;
+                      newProject.isLoading = false;">
+                      Close
+                    </v-btn>
+                    <v-btn color="blue darken-1"
+                      flat
+                      @click="startProject"
+                      :loading="newProject.isLoading">
+                      Save
+                    </v-btn>
+                  </v-card-actions>
+                </v-card>
+            </v-dialog>
         </v-layout>
       </v-container>
 
-      <v-container
-        grid-list-lg
-      >
+      <v-container grid-list-lg>
         <h1 class="display-1 font-weight-bold mb-3">
           Projects
         </h1>
@@ -133,9 +223,7 @@
                       ... <a @click="projectData[index].dialog = true">[Show full]</a>
                     </span>
                     <br/><br/>
-                    <small>Up Until: <b>{{ new Date(project.deadline * 1000) }}</b></small>
-                    <br/><br/>
-                    <small>Goal of <b>{{ project.goalAmount / 10**18 }} ETH </b></small>
+                    <small>Goal of <b>{{ project.goalAmount / (10**18) }} ETH </b></small>
                     <small v-if="project.currentState == 1">wasn't achieved before deadline</small>
                     <small v-if="project.currentState == 2">has been achieved</small>
                   </div>
@@ -202,6 +290,9 @@ export default {
   name: 'App',
   data() {
     return {
+      //about modal dialogue
+      dialog: false,
+      startProjectEquipmentDialog: false,
       startProjectDialog: false,
       account: null,
       stateMap: [
@@ -239,7 +330,8 @@ export default {
       crowdfundInstance.methods.startProject(
         this.newProject.title,
         this.newProject.description,
-        this.newProject.duration,
+        this.newProject.email,
+        this.newProject.phone,
         web3.utils.toWei(this.newProject.amountGoal, 'ether'),
       ).send({
         from: this.account,
@@ -275,13 +367,9 @@ export default {
         }
       });
     },
-    getRefund(index) {
-      this.projectData[index].isLoading = true;
-      this.projectData[index].contract.methods.getRefund().send({
-        from: this.account,
-      }).then(() => {
-        this.projectData[index].isLoading = false;
-      });
+    getRefund(address) {
+      // Operations for getting refund (funded amount to an already expired project)
+      console.log('Get refund!');
     },
   },
 };
