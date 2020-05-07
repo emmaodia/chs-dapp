@@ -29,7 +29,16 @@
                   </v-card-title>
 
                   <v-card-text>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Build impactful solutions to address COVID-19 to do good for society!
+                    COVID19 is one of the biggest crises the world has faced in the past several decades. 
+                    It has suffocated health care systems and crumbled economies all around the world. We need to unite and fight against it.
+                    There are many communities where medical equipment such as personal protective equipment for medical doctors are not available. 
+                    There's a priority to meet such needs in achieving success in this great fight. 
+                    This dApp is built so as to ensure that those who need support get it.You can request for Equipment or alternatively funding to purchase equipment. 
+                    This tool built on the Blockchain ensures transparent procurement and distribution. CHS DApp is a simple Ethereum-based decentralized application (dapp) where communities can put in request for needs for medical relief materials such as Personal Protective Equipments for Medical Teams.
+                    The platform also provides real-time decision support to Track funding funding received by communitis. As the platform leverages blockchain technology to decentralize data and decision-making, it helps build trust, transparency and validate actual needs.
+                    Project Front End Repo: https://github.com/emmaodia/chs-dapp Smart Contract Gist: https://gist.github.com/emmaodia/9866843961157bfcc1e401d7e70108a4 
+                    Built by: @emma_odia on Twitter.
                   </v-card-text>
 
                   <v-divider></v-divider>
